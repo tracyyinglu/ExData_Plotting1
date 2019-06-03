@@ -7,7 +7,7 @@ names(powerdata) <- c("Date", "Time", "Global_active_power", "Global_reactive_po
                  "Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
 write.table(powerdata, "powerdata.csv", sep = ",", row.names = FALSE)
 
-powerdata$Global_active_power <- as.numeric(data$Global_active_power)
+powerdata$Global_active_power <- as.numeric(powerdata$Global_active_power)
 png("plot1.png", width = 480, height = 480)
 with(powerdata, hist(Global_active_power, main = "Global Active Power", xlab="Global Active Power (kilowatts)", col = "red"))
 dev.off()
